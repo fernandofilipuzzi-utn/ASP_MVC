@@ -1,0 +1,15 @@
+@model Ejemplo1_MVC.Models.Persona
+
+<h2>Eliminar Persona</h2>
+
+<h4>¿Estás seguro de que deseas eliminar esta persona?</h4>
+<div>
+    <h4>@Model.Nombre</h4>
+    <p>Edad: @Model.Edad</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

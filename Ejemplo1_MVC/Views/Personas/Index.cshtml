@@ -1,0 +1,29 @@
+@model IEnumerable<Ejemplo1_MVC.Models.Persona>
+
+<h2>Lista de Personas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persona in Model)
+        {
+            <tr>
+                <td>@persona.Nombre</td>
+                <td>@persona.Edad</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@persona.Id">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@persona.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@persona.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Crear Nueva Persona</a>
