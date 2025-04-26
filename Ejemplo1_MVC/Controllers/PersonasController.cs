@@ -8,7 +8,7 @@ namespace Ejemplo1_MVC.Controllers;
 public class PersonasController : Controller
 {
     // Static list to simulate a data source
-    private static List<APersonaViewModel> personas = new List<APersonaViewModel>
+    private static List<PersonaViewModel> personas = new List<PersonaViewModel>
     {
         new APersonaViewModel { Id = 1, Nombre = "Juan", Edad = 30 },
         new APersonaViewModel { Id = 2, Nombre = "Maria", Edad = 25 }
@@ -40,7 +40,7 @@ public class PersonasController : Controller
     // POST: Personas/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public ActionResult Create(APersonaViewModel model)
+    public ActionResult Create(PersonaViewModel model)
     {
         if (ModelState.IsValid)
         {
